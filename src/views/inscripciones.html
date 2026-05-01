@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscripciones - Sistema Escolar</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="/">
+        <i class="bi bi-mortarboard-fill me-2"></i>Sistema Escolar UNAM
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="/alumnos.html">Alumnos</a></li>
+          <li class="nav-item"><a class="nav-link" href="/profesores.html">Profesores</a></li>
+          <li class="nav-item"><a class="nav-link" href="/asignaturas.html">Asignaturas</a></li>
+          <li class="nav-item"><a class="nav-link" href="/cursos.html">Cursos</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/inscripciones.html">Inscripciones</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div>
+        <h2><i class="bi bi-clipboard-check text-danger me-2"></i>Inscripciones y Calificaciones</h2>
+        <p class="text-muted mb-0">Datos provenientes del endpoint <code>GET /api/inscripciones</code></p>
+      </div>
+      <span class="badge bg-danger fs-6" id="totalBadge">Cargando...</span>
+    </div>
+
+    <div class="card shadow-sm border-0">
+      <div class="card-body">
+        <div id="loader" class="text-center py-5">
+          <div class="spinner-border text-danger" role="status"></div>
+          <p class="mt-3 text-muted">Cargando inscripciones...</p>
+        </div>
+
+        <div id="error" class="alert alert-danger d-none">
+          <i class="bi bi-exclamation-triangle me-2"></i>
+          <span id="errorMsg"></span>
+        </div>
+
+        <div class="table-responsive d-none" id="tableContainer">
+          <table id="tablaInscripciones" class="table table-striped table-hover" style="width:100%">
+            <thead class="table-dark">
+              <tr>
+                <th>ID</th>
+                <th>No. Cuenta</th>
+                <th>Alumno</th>
+                <th>Asignatura</th>
+                <th>Grupo</th>
+                <th>1er Parcial</th>
+                <th>2do Parcial</th>
+                <th>3er Parcial</th>
+                <th>Promedio</th>
+                <th>Estatus</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-custom mt-5 py-4">
+    <div class="container text-center">
+      <p class="mb-0 text-muted">Proyecto Multiplataforma - FCA UNAM</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.min.js"></script>
+  <script src="/js/inscripciones.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Escolar - Inicio</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="/">
+        <i class="bi bi-mortarboard-fill me-2"></i>Sistema Escolar UNAM
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="/">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="/alumnos.html">Alumnos</a></li>
+          <li class="nav-item"><a class="nav-link" href="/profesores.html">Profesores</a></li>
+          <li class="nav-item"><a class="nav-link" href="/asignaturas.html">Asignaturas</a></li>
+          <li class="nav-item"><a class="nav-link" href="/cursos.html">Cursos</a></li>
+          <li class="nav-item"><a class="nav-link" href="/inscripciones.html">Inscripciones</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-section text-center py-5">
+    <div class="container">
+      <h1 class="display-4 fw-bold mb-3">Sistema de Gestión Escolar</h1>
+      <p class="lead mb-4">API REST con Node.js + Express + PostgreSQL</p>
+      <p class="text-muted">Primera entrega - Consulta de relaciones (tablas)</p>
+    </div>
+  </section>
+
+  <!-- Cards de navegación -->
+  <section class="container my-5">
+    <div class="row g-4">
+      <!-- Alumnos -->
+      <div class="col-md-6 col-lg-4">
+        <a href="/alumnos.html" class="text-decoration-none">
+          <div class="card card-hover h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <i class="bi bi-person-badge icon-card text-primary"></i>
+              <h4 class="card-title mt-3">Alumnos</h4>
+              <p class="card-text text-muted">Consulta el catálogo completo de alumnos inscritos</p>
+              <span class="badge bg-primary">GET /api/alumnos</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Profesores -->
+      <div class="col-md-6 col-lg-4">
+        <a href="/profesores.html" class="text-decoration-none">
+          <div class="card card-hover h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <i class="bi bi-person-workspace icon-card text-success"></i>
+              <h4 class="card-title mt-3">Profesores</h4>
+              <p class="card-text text-muted">Información del personal docente de la institución</p>
+              <span class="badge bg-success">GET /api/profesores</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Asignaturas -->
+      <div class="col-md-6 col-lg-4">
+        <a href="/asignaturas.html" class="text-decoration-none">
+          <div class="card card-hover h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <i class="bi bi-book icon-card text-info"></i>
+              <h4 class="card-title mt-3">Asignaturas</h4>
+              <p class="card-text text-muted">Catálogo de materias del plan de estudios</p>
+              <span class="badge bg-info">GET /api/asignaturas</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Cursos -->
+      <div class="col-md-6 col-lg-4">
+        <a href="/cursos.html" class="text-decoration-none">
+          <div class="card card-hover h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <i class="bi bi-journal-bookmark icon-card text-warning"></i>
+              <h4 class="card-title mt-3">Cursos</h4>
+              <p class="card-text text-muted">Cursos activos con profesor, grupo y semestre</p>
+              <span class="badge bg-warning text-dark">GET /api/cursos</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Inscripciones -->
+      <div class="col-md-6 col-lg-4">
+        <a href="/inscripciones.html" class="text-decoration-none">
+          <div class="card card-hover h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <i class="bi bi-clipboard-check icon-card text-danger"></i>
+              <h4 class="card-title mt-3">Inscripciones</h4>
+              <p class="card-text text-muted">Calificaciones y promedios de los alumnos por curso</p>
+              <span class="badge bg-danger">GET /api/inscripciones</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- API Info -->
+      <div class="col-md-6 col-lg-4">
+        <a href="/api" class="text-decoration-none" target="_blank">
+          <div class="card card-hover h-100 border-0 shadow-sm bg-dark text-white">
+            <div class="card-body text-center p-4">
+              <i class="bi bi-code-slash icon-card"></i>
+              <h4 class="card-title mt-3">API REST</h4>
+              <p class="card-text">Explora el JSON crudo del API en /api</p>
+              <span class="badge bg-light text-dark">Ver endpoints</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-custom mt-5 py-4">
+    <div class="container text-center">
+      <p class="mb-1"><strong>Proyecto Multiplataforma</strong> - Desarrollo de Aplicaciones Multiplataforma</p>
+      <p class="mb-0 text-muted">Facultad de Contaduría y Administración - UNAM</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

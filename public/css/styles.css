@@ -1,0 +1,148 @@
+/* ============================================
+   ESTILOS PERSONALIZADOS - Sistema Escolar UNAM
+   ============================================ */
+
+:root {
+  --color-unam-azul: #003866;
+  --color-unam-dorado: #c9a227;
+  --color-fondo: #f4f6f9;
+}
+
+body {
+  background-color: var(--color-fondo);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ====== NAVBAR ====== */
+.navbar-custom {
+  background: linear-gradient(135deg, var(--color-unam-azul) 0%, #002244 100%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-custom .navbar-brand {
+  color: #fff !important;
+  font-size: 1.3rem;
+}
+
+.navbar-custom .nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin: 0 5px;
+  border-radius: 5px;
+  padding: 8px 14px !important;
+}
+
+.navbar-custom .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff !important;
+}
+
+.navbar-custom .nav-link.active {
+  background-color: var(--color-unam-dorado);
+  color: var(--color-unam-azul) !important;
+  font-weight: 600;
+}
+
+/* ====== HERO ====== */
+.hero-section {
+  background: linear-gradient(135deg, #ffffff 0%, #e9ecef 100%);
+  border-bottom: 4px solid var(--color-unam-dorado);
+}
+
+.hero-section h1 {
+  color: var(--color-unam-azul);
+}
+
+/* ====== CARDS ====== */
+.card-hover {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+.icon-card {
+  font-size: 3.5rem;
+  display: inline-block;
+}
+
+.card-title {
+  color: var(--color-unam-azul);
+  font-weight: 600;
+}
+
+/* ====== TABLAS ====== */
+.table-dark {
+  background-color: var(--color-unam-azul) !important;
+}
+
+.table-dark th {
+  background-color: var(--color-unam-azul) !important;
+  color: #fff !important;
+  border-color: var(--color-unam-azul) !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 56, 102, 0.08);
+}
+
+/* ====== DATATABLES PERSONALIZACIÓN ====== */
+.dataTables_wrapper .dataTables_length select,
+.dataTables_wrapper .dataTables_filter input {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background: var(--color-unam-azul) !important;
+  color: white !important;
+  border-color: var(--color-unam-azul) !important;
+}
+
+/* ====== BADGES DE ESTATUS ====== */
+.badge-reg {
+  background-color: #198754;
+  color: white;
+}
+
+.badge-np {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* ====== FOOTER ====== */
+.footer-custom {
+  background-color: var(--color-unam-azul);
+  color: #fff;
+  margin-top: auto;
+}
+
+.footer-custom .text-muted {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* ====== UTILIDADES ====== */
+code {
+  background-color: #e9ecef;
+  color: #d63384;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
