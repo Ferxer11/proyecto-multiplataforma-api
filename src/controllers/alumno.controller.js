@@ -1,23 +1,66 @@
+// ============================================
+// CONTROLLER: Alumno
+// ============================================
+
 const AlumnoModel = require('../models/alumno.model');
+
 const AlumnoController = {
-  getAll: async (req, res) => {
+  getAll: async (req, res, next) => {
     try {
-      const alumnos = await AlumnoModel.getAll();
-      res.status(200).json({ success: true, total: alumnos.length, data: alumnos });
-    } catch (error) {
-      console.error('Error en getAll alumnos:', error);
-      res.status(500).json({ success: false, message: 'Error al obtener los alumnos', error: error.message });
-    }
+      const data = await AlumnoModel.getAll();
+      res.json({ success: true, total: data.length, data });
+    } catch (err) { next(err); }
   },
-  getById: async (req, res) => {
+
+  getById: async (req, res, next) => {
     try {
-      const { numero_cuenta } = req.params;
-      const alumno = await AlumnoModel.getById(numero_cuenta);
-      if (!alumno) return res.status(404).json({ success: false, message: `No se encontró el alumno con número de cuenta ${numero_cuenta}` });
-      res.status(200).json({ success: true, data: alumno });
-    } catch (error) {
-      res.status(500).json({ success: false, message: 'Error al obtener el alumno', error: error.message });
-    }
+      const data = await AlumnoModel.getById(req.params.numero_cuenta);
+      if (!data) {
+        return res.status(404).json({
+          success: false, error: 'No encontrado',
+          message: `No existe alumno con numero_cuenta ${req.params.numero_cuenta}`,
+        });
+      }
+      res.json({ success: true, data });
+    } catch (err) { next(err); }
+  },
+
+  create: async (req, res, next) => {
+    try {
+      const data = await AlumnoModel.create(req.body);
+      res.status(201).json({
+        success: true,
+        message: 'Alumno creado correctamente',
+        data,
+      });
+    } catch (err) { next(err); }
+  },
+
+  update: async (req, res, next) => {
+    try {
+      const data = await AlumnoModel.update(req.params.numero_cuenta, req.body);
+      if (!data) {
+        return res.status(404).json({
+          success: false, error: 'No encontrado',
+          message: `No existe alumno con numero_cuenta ${req.params.numero_cuenta}`,
+        });
+      }
+      res.json({ success: true, message: 'Alumno actualizado correctamente', data });
+    } catch (err) { next(err); }
+  },
+
+  delete: async (req, res, next) => {
+    try {
+      const data = await AlumnoModel.delete(req.params.numero_cuenta);
+      if (!data) {
+        return res.status(404).json({
+          success: false, error: 'No encontrado',
+          message: `No existe alumno con numero_cuenta ${req.params.numero_cuenta}`,
+        });
+      }
+      res.json({ success: true, message: 'Alumno eliminado correctamente', data });
+    } catch (err) { next(err); }
   },
 };
+
 module.exports = AlumnoController;
