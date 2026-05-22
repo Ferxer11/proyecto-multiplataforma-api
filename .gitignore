@@ -15,3 +15,7 @@ Thumbs.db
 # Editor
 .vscode/
 .idea/
+
+# Archivos locales de setup y editor
+*.code-workspace
+setup-*.sh
